@@ -5,13 +5,23 @@ Recupera imagens de bancos de dados MS-Access | *Recovers images from MS-Access 
 <br/>
 <br/>
 ### 🖥️ Pré-requisitos / *System requirements*
-
 *  [![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://www.microsoft.com/windows/)
 
 
 ### 🔎 Testando o programa / *Testing the program*
 * Para testar o programa (portátil), basta fazer o download do arquivo executável, acessível a partir da pasta [Win32/Debug](https://github.com/laertemjr/PicSave/tree/main/Win32/Debug) deste repositório.
 * *To test the program (portable), simply download the executable file, accessible from the [Win32/Debug](https://github.com/laertemjr/PicSave/tree/main/Win32/Debug) folder of this repository.*
+
+
+### 👉 Características / *Features*
+* Suporta os tipos de imagens: JPEG, BMP, PNG, e TIF / *Supports image types: JPEG, BMP, PNG, and TIF*
+* Suporte bilingue: Português do Brasil e Inglês / *Bilingual support: Brazilian Portuguese and English*
+
+
+### 👍 Agradecimentos / *Acknowledgements*
+* *Thanks to Edijs Kolesnikovičs (Delphi programmer) from Lithuania:*
+  - https://stackoverflow.com/users/2578854/edijs-kolesnikovi%c4%8ds
+  - https://stackoverflow.com/questions/39188245/how-to-display-picturejpg-with-tdbimage-from-tblobfield
 
 
 ### 🛠️ Construído com / *Built with*
