@@ -18,7 +18,7 @@ Recupera imagens de bancos de dados MS-Access | *Recovers images from MS-Access 
 * Suporte bilingue: Português do Brasil e Inglês / *Bilingual support: Brazilian Portuguese and English*
 
 
-### 👉 Agradecimentos / *Acknowledgements*
+### 👍 Agradecimentos / *Acknowledgements*
 * *Thanks to Edijs Kolesnikovičs (Delphi programmer) from Lithuania:*
   - https://stackoverflow.com/users/2578854/edijs-kolesnikovi%c4%8ds
   - https://stackoverflow.com/questions/39188245/how-to-display-picturejpg-with-tdbimage-from-tblobfield
