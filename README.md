@@ -19,8 +19,7 @@ Recupera imagens de bancos de dados MS-Access | *Recovers images from MS-Access 
 
 
 ### 📌 Versão 0.1 - 14/03/2025 / *Version 0.1 - 03/14/2025*
-* Novidades: suporte multi-idiomas: português do Brasil e Inglês.
-* *News: Multi-language support: Brazilian Portuguese and English.*
+* Versão original / Original version
 
 
 ### 📄 Licença / *License*
