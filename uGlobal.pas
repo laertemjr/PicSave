@@ -5,7 +5,6 @@ interface
 uses
    Vcl.Graphics, Vcl.Imaging.pngimage, Vcl.Imaging.jpeg, Vcl.Imaging.GIFImg, Data.DB;
 
-function GetHeader(const AFile: string; const AByteCount: integer): string;
 function GetImageFromBlob(const ABlobField: TBlobField): TGraphic;
 
 
@@ -16,52 +15,6 @@ uses
 
 // Code from: https://stackoverflow.com/questions/39188245/how-to-display-picturejpg-with-tdbimage-from-tblobfield
 
-
-function GetHeader(const AFile: string; const AByteCount: integer): string;
-const
-  HEADER_STR = '%s_HEADER: array [0 .. %d] of byte = (%s)';
-var
-  _HeaderStream: TMemoryStream;
-  _FileStream: TMemoryStream;
-  _Buf: integer;
-  _Ext: string;
-  _FullByteStrArr: string;
-  _ByteStr: string;
-  i: integer;
-begin
-  Result := '';
-  if not FileExists(AFile) then
-    Exit;
-
-  _HeaderStream := TMemoryStream.Create;
-  _FileStream := TMemoryStream.Create;
-  try
-    _FileStream.LoadFromFile(AFile);
-    _FileStream.Position := 0;
-    _HeaderStream.CopyFrom(_FileStream, 5);
-    if _HeaderStream.Size > 4 then
-    begin
-      _HeaderStream.Position := 0;
-      _ByteStr := '';
-      _FullByteStrArr := '';
-      for i := 0 to AByteCount do
-      begin
-        _HeaderStream.Read(_Buf, 1);
-        _ByteStr := IntToHex(_Buf, 2);
-        _FullByteStrArr := _FullByteStrArr + ', $' +
-          Copy(_ByteStr, Length(_ByteStr) - 1, 2);
-      end;
-      _FullByteStrArr := Copy(_FullByteStrArr, 3, Length(_FullByteStrArr));
-
-      _Ext := UpperCase(ExtractFileExt(AFile));
-      _Ext := Copy(_Ext, 2, Length(_Ext));
-      Result := Format(HEADER_STR, [_Ext, AByteCount, _FullByteStrArr]);
-    end;
-  finally
-    FreeAndNil(_FileStream);
-    FreeAndNil(_HeaderStream);
-  end;
-end;
 
 function GetImageFromBlob(const ABlobField: TBlobField): TGraphic;
 CONST
