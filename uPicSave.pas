@@ -125,7 +125,7 @@ begin
 
    if FDTable1.RecordCount = 0 then
     begin
-       ShowMessage(strMsg[0]); // A tabela está vazia.
+       ShowMessage(strMsg[0]); // The table is empty.
        Exit;
     end;
 
@@ -137,13 +137,13 @@ begin
                cbbField.Items.Add(FDTable1.Fields[i].FieldName);
        end;
     except
-       ShowMessage(strMsg[1]); // A tabela possui tipo(s) de campo(s) incompatível(veis) com o padrão FireDAC
+       ShowMessage(strMsg[1]); // The table has field type(s) incompatible with the FireDAC standard
        Exit;
     end;
 
     if cbbField.GetCount = 0 then
     begin
-       ShowMessage(strMsg[2]); // Não existem campos do tipo BLOB nesta tabela.
+       ShowMessage(strMsg[2]); // There are no BLOB type fields in this table.
        Exit;
     end;
 
@@ -165,7 +165,7 @@ begin
       edtBD.Text := OpenDialog1.FileName;
       if ExtractFileExt(OpenDialog1.FileName) <> '.mdb' then
       begin
-         ShowMessage(strMsg[3]); // Não é um banco de dados MS-Access .mdb
+         ShowMessage(strMsg[3]); // It is not a MS-Access .mdb database
          clean;
          Exit;
       end;
@@ -178,14 +178,14 @@ begin
          FDConnection1.Params.Add('DriverID=MSAcc');
          FDConnection1.Params.Add('Database=' + edtBD.Text);
          FDConnection1.Connected := True;
-         ShowMessage(strMsg[4]); // Banco de dados conectado.
+         ShowMessage(strMsg[4]); // Database connected.
          FDConnection1.GetTableNames('', '', '', cbbTable.Items);
          cbbTable.ItemIndex := 0;
          cbbTable.Enabled := True;
 
          if cbbTable.Text = EmptyStr then
          begin
-            ShowMessage(strMsg[5]); // Não há tabelas no banco de dados.
+            ShowMessage(strMsg[5]); // There are no tables in the database.
             FDTable1.Close;
             clean;
             Exit;
@@ -193,7 +193,7 @@ begin
          else
             checkTable;
       except
-         ShowMessage(strMsg[6]); // Não foi possível a conexão ao banco de dados.
+         ShowMessage(strMsg[6]); // Unable to connect to the database.
          clean;
       end;
    end;
@@ -237,10 +237,10 @@ begin
       FDTable1.Next;
    end;
 
-   ShowMessage(strMsg[7] + #13#10 + #13#10 + // Tarefa concluída :
-               strMsg[8] + IntToStr(n) + #13#10 + // Campos em branco :
-               strMsg[9] + IntToStr(e) + #13#10 + // Campos não recuperados :
-               strMsg[10] + IntToStr(c)); // Imagens recuperadas :
+   ShowMessage(strMsg[7] + #13#10 + #13#10 + // Task completed:
+               strMsg[8] + IntToStr(n) + #13#10 + // Blank fields:
+               strMsg[9] + IntToStr(e) + #13#10 + // Unrecovered fields:
+               strMsg[10] + IntToStr(c)); // Recovered images:
    ProgressBar1.Position := 0;
    ShellExecute(Application.Handle, 'open', PChar(FileOpenDialog1.FileName),nil, nil, SW_SHOWDEFAULT);
    FDTable1.Close;
