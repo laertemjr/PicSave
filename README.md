@@ -1,7 +1,7 @@
 # PicSave
 
 
-Recupera imagens de bancos de dados MS-Access | *Recovers images from MS-Access databases*
+Recupera imagens de campos BLOB de bancos de dados MS-Access para arquivos em disco | *Recovers images of BLOB fields from MS-Access databases to files on disk*
 <br/>
 <br/>
 ### 🖥️ Pré-requisitos / *System requirements*
