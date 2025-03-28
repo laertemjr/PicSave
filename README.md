@@ -8,11 +8,6 @@ Recupera imagens de campos BLOB do MS-Access para arquivos em disco | *Recovers 
 *  [![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://www.microsoft.com/windows/)
 
 
-### 🔎 Testando o programa / *Testing the program*
-* Para testar o programa (portátil), basta fazer o download do arquivo executável, acessível a partir da pasta [Win32/Debug](https://github.com/laertemjr/PicSave/tree/main/Win32/Debug) deste repositório.
-* *To test the program (portable), simply download the executable file, accessible from the [Win32/Debug](https://github.com/laertemjr/PicSave/tree/main/Win32/Debug) folder of this repository.*
-
-
 ### 👉 Características / *Features*
 * Suporta os tipos de imagens: JPEG, BMP, PNG, e TIF / *Supports image types: JPEG, BMP, PNG, and TIF*
 * Suporte bilingue: Português do Brasil e Inglês / *Bilingual support: Brazilian Portuguese and English*
@@ -26,10 +21,6 @@ Recupera imagens de campos BLOB do MS-Access para arquivos em disco | *Recovers 
 
 ### 🛠️ Construído com / *Built with*
 * [![Delphi](https://img.shields.io/badge/-Delphi-E62431?logo=delphi&logoColor=white&style=plastic)](https://www.embarcadero.com/products/delphi) 12.1 Athens
-
-
-### 📌 Versão 0.1 - 14/03/2025 / *Version 0.1 - 03/14/2025*
-* Versão original / Original version
 
 
 ### 📄 Licença / *License*
