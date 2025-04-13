@@ -27,7 +27,7 @@ begin
    with frmPicSave do
    begin
       Caption := 'PicSave - Recupera imagens de bancos de dados MS-Access';
-      StatusBar1.Panels[0].Text := 'Desenvolvido em Delphi 12.1 - versão 0.1 (2025)';
+      StatusBar1.Panels[0].Text := 'Desenvolvido em Delphi 12.1 - versão ' + sVerInfo + ' (2025)';
       btnBrowse.Caption := '&Procurar';
       btnBrowse2.Caption := '&Procurar';
       btnRecover.Caption := '&Recuperar';
@@ -59,7 +59,7 @@ begin
    with frmPicSave do
    begin
       Caption := 'PicSave - Recovers images from MS-Access databases';
-      StatusBar1.Panels[0].Text := 'Developed in Delphi 12.1 - version 0.1 (2025)';
+      StatusBar1.Panels[0].Text := 'Developed in Delphi 12.1 - version ' + sVerInfo + ' (2025)';
       btnBrowse.Caption := '&Browse';
       btnBrowse2.Caption := '&Browse';
       btnRecover.Caption := '&Recover';
