@@ -5,12 +5,16 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls,
-  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf,
-  FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async,
-  FireDAC.Phys, FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client,
-  FireDAC.Phys.MSAccDef, FireDAC.Phys.ODBCBase, FireDAC.Phys.MSAcc,
-  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
-  FireDAC.Comp.DataSet, Vcl.ExtCtrls, Winapi.ShellAPI, Vcl.Buttons;
+  FireDAC.Stan.Intf,
+
+  FireDAC.Phys, Data.DB, FireDAC.Comp.Client,
+  FireDAC.Phys.ODBCBase, FireDAC.Phys.MSAcc,
+
+  FireDAC.Comp.DataSet, Vcl.ExtCtrls, Winapi.ShellAPI, Vcl.Buttons,
+  FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.VCLUI.Wait,
+  FireDAC.Phys.MSAccDef, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
+  FireDAC.DApt;
 
 type
   TfrmPicSave = class(TForm)
@@ -50,7 +54,7 @@ type
     procedure checkTable;
   public
     { Public declarations }
-    function GetVersionInfo(const app:string):string;
+
   end;
 
 var
@@ -248,33 +252,6 @@ begin
    ShellExecute(Application.Handle, 'open', PChar(FileOpenDialog1.FileName),nil, nil, SW_SHOWDEFAULT);
    FDTable1.Close;
    clean;
-end;
-
-function TfrmPicSave.GetVersionInfo(const app: string): string;
-type
-  TVersionInfo = packed record
-    Dummy: array[0..7] of Byte;
-    V2, V1, V4, V3: Word;
-  end;
-var
-  Zero, Size: Cardinal;
-  Data: Pointer;
-  VersionInfo: ^TVersionInfo;
-begin
-  Size := GetFileVersionInfoSize(Pointer(app), Zero);
-  if Size = 0 then
-    Result := ''
-  else
-  begin
-    GetMem(Data, Size);
-    try
-      GetFileVersionInfo(Pointer(app), 0, Size, Data);
-      VerQueryValue(Data, '\', Pointer(VersionInfo), Size);
-      Result := VersionInfo.V1.ToString + '.' + VersionInfo.V2.ToString + '.' + VersionInfo.V3.ToString + '.' + VersionInfo.V4.ToString;
-    finally
-      FreeMem(Data);
-    end;
-  end;
 end;
 
 procedure TfrmPicSave.btn_enClick(Sender: TObject);

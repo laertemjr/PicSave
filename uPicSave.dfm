@@ -316,7 +316,6 @@ object frmPicSave: TfrmPicSave
         Text = 'Desenvolvido em Delphi 12.1 - vers'#227'o '
         Width = 50
       end>
-    ExplicitTop = 428
   end
   object btnBrowse: TButton
     Left = 8

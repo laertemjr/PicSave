@@ -3,15 +3,17 @@ unit uGlobal;
 interface
 
 uses
-   Vcl.Graphics, Vcl.Imaging.pngimage, Vcl.Imaging.jpeg, Vcl.Imaging.GIFImg, Data.DB;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, FireDAC.Phys, Data.DB,
+  Vcl.ExtCtrls, Vcl.Buttons,
+  Vcl.Imaging.pngimage, Vcl.Imaging.jpeg, Vcl.Imaging.GIFImg;
+
 
 function GetImageFromBlob(const ABlobField: TBlobField): TGraphic;
-
+function GetVersionInfo(const app:string):string;
 
 implementation
 
-uses
-  System.Classes, System.SysUtils;
 
 // Code from: https://stackoverflow.com/questions/39188245/how-to-display-picturejpg-with-tdbimage-from-tblobfield
 
@@ -76,6 +78,33 @@ begin
   finally
     FreeAndNil(_ImgStream);
     FreeAndNil(_HeaderStream);
+  end;
+end;
+
+function GetVersionInfo(const app: string): string;
+type
+  TVersionInfo = packed record
+    Dummy: array[0..7] of Byte;
+    V2, V1, V4, V3: Word;
+  end;
+var
+  Zero, Size: Cardinal;
+  Data: Pointer;
+  VersionInfo: ^TVersionInfo;
+begin
+  Size := GetFileVersionInfoSize(Pointer(app), Zero);
+  if Size = 0 then
+    Result := ''
+  else
+  begin
+    GetMem(Data, Size);
+    try
+      GetFileVersionInfo(Pointer(app), 0, Size, Data);
+      VerQueryValue(Data, '\', Pointer(VersionInfo), Size);
+      Result := VersionInfo.V1.ToString + '.' + VersionInfo.V2.ToString + '.' + VersionInfo.V3.ToString + '.' + VersionInfo.V4.ToString;
+    finally
+      FreeMem(Data);
+    end;
   end;
 end;
 
