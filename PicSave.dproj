@@ -5,7 +5,7 @@
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <ProjectName Condition="'$(ProjectName)'==''">PicSave</ProjectName>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -84,6 +84,7 @@
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
         <VerInfo_Build>3</VerInfo_Build>
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <DCC_UsePackage>vclwinx;fs29;fmx;FMXfrLanguageSlovak29;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;FireDACCommonODBC;FMXfrCoreLibrary29;appanalytics;IndyProtocols;vclx;frxADOQueryBuilder29;dbxcds;vcledge;fcxp29;frLanguageSlovak29;frLanguageHungarian29;FMXfrLanguageLatvian29;FMXfrLanguageUkrainian29;FMXfrLanguageDutch29;FireDACSqliteDriver;DbxClientDriver;JclVcl;soapmidas;frLanguageArabic29;frCoreLibrary29;Jcl;dbexpress;frLanguageCatalon29;frxFDQueryBuilder29;Python;frLanguageBrazil29;frLanguageCzech29;FMXfrxDBX29;FMXfrLanguageSwiss29;inet;PythonVcl;vcltouch;fmxdae;FMXfrLanguageTurkish29;CustomIPTransport;FMXfrLanguageBrazil129;FMXfrLanguageCzech29;frLanguageItalian29;FMXfsDB29;frxPDF29;fqbFD29;frLanguageSwiss29;IndySystem;FMXfsADO29;frxe29;frLanguageSwedish29;ibxbindings;FMXfrLanguagePolish29;frLanguageUkrainian29;fsDB29;JclContainers;vclFireDAC;FireDACCommon;frLanguageDanish29;bindcompdbx;fcx29;FMXfrLanguageLithuanian29;rtl;FireDACMySQLDriver;FMXfrLanguageGerman29;fqb29;frLanguageLithuanian29;DBXSqliteDriver;frLanguageFrench29;frLanguageRussian29;frxSM29;vclimg;FMXfrLanguageBrazil229;inetdbxpress;FireDAC;xmlrtl;ibxpress;dsnap;frFDDataLibrary29;frLanguageSerbian29;FMXfrLanguageRussian29;frLanguageFarsi29;FMXfrLanguageFrench29;fmxobj;bindcompvclsmp;frx29;FMXfrLanguageHebrew29;vclib;FMXfrLanguageCroatian29;frLanguageChinese29;frControlsLibrary29;frxQueryBuilder29;FMXfrxADO29;frxIntIOIndy29;frLanguageHebrew29;fqbADO29;FMXfrLanguageBulgarian29;FMXfrxCDS29;frxDB29;fqbDBX29;frLocalizationLibrary29;FireDACCommonDriver;FMXfcxd29;IndyIPClient;frxHTML29;bindcompvclwinx;frLanguageTaiwan29;FMXfrLanguageArabic29;bindcompfmx;frxDBXQueryBuilder29;frLanguageRomanian29;frLanguageGerman29;inetdb;FMXfrLanguageItalian29;frLanguageIndonesian29;ibmonitor;FMXfrLanguageSpanish29;FMXfcxed29;frLanguageBrazil229;vclactnband;FMXfrxDB29;fmxFireDAC;frLanguageCroatian29;DBXMySQLDriver;FMXfs29;fsADO29;VclSmp;FMXfrxFD29;fmxase;FMXfrLanguageFarsi29;FMXfrLanguageTaiwan29;dbrtl;FMXfrLanguageChinese29;FMXfrLanguagePortuguese29;FireDACMSAccDriver;frxcs29;FMXfrLanguageJapanese29;frLanguageSlovene29;JclDeveloperTools;frADODataLibrary29;frLanguageTurkish29;vcldsnap;DBXInterBaseDriver;fcxe29;frLanguageGreek29;Skia.Package.VCL;frLanguageBrazil129;vcldb;FMXfrLanguageCatalon29;FMXfrLanguageHungarian29;SynEditDR;bindcomp;frLanguageLatvian29;IndyCore;RESTBackendComponents;frLanguageSpanish29;frxIntIO29;FMXfrx29;frLanguageJapanese29;frSmartMemo29;FireDACADSDriver;frxFD29;RESTComponents;FMXfrLanguageDanish29;IndyIPServer;vcl;dsnapxml;adortl;dsnapcon;FMXfrLanguageSlovene29;fsFD29;FMXfrLanguageSerbian29;FMXfrxe29;frxADO29;FMXfrLanguageIndonesian29;FMXfrLanguageSwedish29;frLanguageDutch29;FireDACPgDriver;fqbSM29;frLanguagePortuguese29;tethering;frLanguageBulgarian29;frLanguagePolish29;bindcompvcl;frxDBX29;FMXfrLanguageBrazil29;CloudService;FMXfrLanguageGreek29;PythonFmx;FMXfcxpd29;FMXfrLocalizationLibrary29;frGraphicsLibrary29;soaprtl;FMXfrLanguageRomanian29;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -97,6 +98,7 @@
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
         <VerInfo_Build>3</VerInfo_Build>
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -178,42 +180,8 @@
                     <Source Name="MainSource">PicSave.dpr</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\Fast Reports\VCL\2024.2.7\Trial\LibRS29\FMX\Win32\dclFMXfsADO29.bpl">FastScript FMX - ADO Components by Fast Reports Inc</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\Fast Reports\VCL\2024.2.7\Trial\LibRS29\FMX\Win32\dclFMXfsDB29.bpl">FastScript FMX - DB Components by Fast Reports Inc</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvSystemDesign290.bpl">JVCL System Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvStdCtrlsDesign290.bpl">JVCL Standard Controls</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvCmpDesign290.bpl">JVCL Non-Visual Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvCustomDesign290.bpl">JVCL Custom Controls</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvDlgsDesign290.bpl">JVCL Dialog Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvCryptDesign290.bpl">JVCL Encryption and Compression</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvMMDesign290.bpl">JVCL Multimedia and Image Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvNetDesign290.bpl">JVCL Network Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvAppFrmDesign290.bpl">JVCL Application and Form Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvDBDesign290.bpl">JVCL Database Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvPluginSystemDesign290.bpl">JVCL Plugin Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvJansDesign290.bpl">JVCL Jans Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvGlobusDesign290.bpl">JVCL Globus Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvPrintPreviewDesign290.bpl">JVCL Print Preview Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvPageCompsDesign290.bpl">JVCL Page Style Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvWizardsDesign290.bpl">JVCL Wizard</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvTimeFrameworkDesign290.bpl">JVCL Time Framework</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JvHMIDesign290.bpl">JVCL HMI Controls</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp290.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\Fast Reports\VCL\2024.2.7\Trial\LibRS29\VCL\Win32\dclfcxc29.bpl">FastCube VCL - Charting Components by Fast Reports Inc</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\Fast Reports\VCL\2024.2.7\Trial\LibRS29\VCL\Win32\dclfcxpTee29.bpl">FastCube VCL -  Fast Report integration TeeChart by Fast Reports Inc</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\Fast Reports\VCL\2024.2.7\Trial\LibRS29\VCL\Win32\dclfqbIBX29.bpl">FastQueryBuilder - IBX Engine by Fast Reports Inc</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\Fast Reports\VCL\2024.2.7\Trial\LibRS29\VCL\Win32\dclfrxIBX29.bpl">FastReport VCL - IBX Components by Fast Reports Inc</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\Fast Reports\VCL\2024.2.7\Trial\LibRS29\VCL\Win32\dclfrxTee29.bpl">FastReport VCL - Tee Components by Fast Reports Inc</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\Fast Reports\VCL\2024.2.7\Trial\LibRS29\VCL\Win32\dclfsIBX29.bpl">FastScript VCL - IBX Components by Fast Reports Inc</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\Fast Reports\VCL\2024.2.7\Trial\LibRS29\VCL\Win32\dclfsTee29.bpl">FastScript VCL - Tee Components by Fast Reports Inc</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\Fast Reports\VCL\2024.2.7\Trial\LibRS29\VCL\Win32\frxIBXQueryBuilder29.bpl">FastReport VCL - FastQueryBuilder - IBX by Fast Reports Inc</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\Fast Reports\VCL\2024.2.7\Trial\LibRS29\FMX\Win32\dclFMXfcxcd29.bpl">FastCube FMX - Charting Components by Fast Reports Inc</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\Fast Reports\VCL\2024.2.7\Trial\LibRS29\FMX\Win32\dclFMXfcxpTeed29.bpl">FastCube FMX - FastReport integration TeeChart by Fast Reports Inc</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\Fast Reports\VCL\2024.2.7\Trial\LibRS29\FMX\Win32\dclFMXfrxIBX29.bpl">FastReport FMX - IBX Components by Fast Reports Inc</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\Fast Reports\VCL\2024.2.7\Trial\LibRS29\FMX\Win32\dclFMXfrxTee29.bpl">FastReport FMX - Tee Components by Fast Reports Inc</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\Fast Reports\VCL\2024.2.7\Trial\LibRS29\FMX\Win32\dclFMXfsIBX29.bpl">FastScript FMX - IBX Components by Fast Reports Inc</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\Fast Reports\VCL\2024.2.7\Trial\LibRS29\FMX\Win32\dclFMXfsTee29.bpl">FastScript FMX - Tee Components by Fast Reports Inc</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">
